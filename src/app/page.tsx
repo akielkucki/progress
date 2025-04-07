@@ -64,7 +64,7 @@ export default function Home() {
 
   // Calculate totals
   const monthlyIncome = income.monthlyRetainers + income.saasRevenue;
-  const totalCarCost = targetCars.reduce((sum, car) => sum + car.price/10, 0);
+  const totalCarCost = targetCars.reduce((sum, car) => sum + car.price/12.5, 0);
 
   // Estimate months to goal
   const monthsToGoal = monthlyIncome > 0
@@ -325,10 +325,10 @@ export default function Home() {
             {targetCars.map((car, index) => (
                 <div key={car.name} className="bg-black border border-gray-800 rounded p-5 shadow-sm">
                   <div className="h-40 relative mb-4 border border-gray-800 rounded overflow-hidden flex items-center justify-center">
-                    <div className="w-full h-full">
-                      <Image alt={car.name} src={car.image} width={1920} height={1080} className="object-cover absolute top-0 bottom-0 right-0 left-0 z-0" />
+                    <div className="w-full h-full absolute top-0 bottom-0 right-0 left-0">
+                      <Image alt={car.name} src={car.image} width={1920} height={1080} className="object-cover object-center z-0" />
                     </div>
-                    <div className="text-base text-center p-4 z-10 flex items-center justify-center flex-col w-full h-full bg-black/60">
+                    <div className="text-base text-center p-4 z-10 flex items-center justify-center flex-col w-full h-full bg-black/50">
                   <span className="text-xs text-gray-300 uppercase tracking-wider block mb-2">
                     {car.name}
                   </span>
